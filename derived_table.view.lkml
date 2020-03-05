@@ -2,6 +2,7 @@ view: derived_table {
 
   derived_table: {
     publish_as_db_view: yes
+    sql_trigger_value: select curdate() ;;
     sql: SELECT
         *
       FROM orders

@@ -1,10 +1,10 @@
-connection: "haarthi-test-bq"
+connection: "thelook"
 
 # include all the views
 include: "*.view"
 
 # include all the dashboards
-include: "*.dashboard"
+#include: "*.dashboard"
 
 # - explore: inventory_items
 #   joins:

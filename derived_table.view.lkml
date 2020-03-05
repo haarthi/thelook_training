@@ -3,6 +3,7 @@ view: derived_table {
   derived_table: {
     publish_as_db_view: yes
     sql_trigger_value: select curdate() ;;
+    indexes: ["user_id"]
     sql: SELECT
         *
       FROM orders
@@ -22,4 +23,9 @@ view: derived_table {
     type: count
 
   }
+}
+
+
+explore: derived_table {
+  hidden: yes
 }

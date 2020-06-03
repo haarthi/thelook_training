@@ -18,6 +18,8 @@ view: derived_table {
     sql: ${TABLE}.user_id ;;
   }
 
+  #
+
 
   measure: count {
     type: count

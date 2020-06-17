@@ -272,7 +272,7 @@ view: pull_requests {
   dimension: significantly_degraded_routes {
     label: "Significantly Degraded"
     type: string
-    sql: ${TABLE}.significantly_degraded_routes ;;
+    sql: CASE WHEN ${TABLE}.significantly_degraded_routes ='' THEN 'None' ELSE ${TABLE}.significantly_degraded_routes END;;
   }
 
   set: detail {

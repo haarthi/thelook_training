@@ -235,31 +235,42 @@ view: pull_requests {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: biggest_ttr_changer {
+  dimension: biggest_ttr_change_route {
     type: string
-    label: "Biggest TtR Changer"
+    label: "Biggest TtR Change Route"
     sql: ${TABLE}.biggest_ttr_changer ;;
   }
 
-  dimension: biggest_ttr_change {
+  dimension: biggest_ttr_change_amount {
     type: string
-    label: "Biggest TtR Change"
+    label: "Biggest TtR Change Amount"
     sql: ${TABLE}.biggest_ttr_change ;;
   }
 
-  dimension: biggest_tti_changer {
+  dimension: biggest_tti_change_route {
     type: string
-    label: "Biggest TtI Changer"
+    label: "Biggest TtI Change Route"
     sql: ${TABLE}.biggest_tti_changer ;;
   }
 
+  dimension: biggest_tti_change_amount {
+    type: string
+    label: "Biggest TtI Change Amount"
+    sql: ${TABLE}.biggest_tti_change ;;
+  }
   dimension: biggest_tti_change {
     type: string
     label: "Biggest TtI Change"
-    sql: ${TABLE}.biggest_tti_change ;;
+    sql: CONCAT(${biggest_tti_change_amount},' ',${biggest_tti_change_route}) ;;
+  }
+  dimension: biggest_ttr_change {
+    type: string
+    label: "Biggest TtR Change"
+    sql: CONCAT(${biggest_ttr_change_amount},' ',${biggest_ttr_change_route}) ;;
   }
 
   dimension: significantly_degraded_routes {
+    label: "Significantly Degraded"
     type: string
     sql: ${TABLE}.significantly_degraded_routes ;;
   }
@@ -267,9 +278,7 @@ view: pull_requests {
   set: detail {
     fields: [
       id,
-      biggest_ttr_changer,
       biggest_ttr_change,
-      biggest_tti_changer,
       biggest_tti_change,
       significantly_degraded_routes
     ]

@@ -232,36 +232,36 @@ view: pull_requests {
 
   dimension: id {
     type: number
-    sql: {TABLE}.id ;;
+    sql: ${TABLE}.id ;;
   }
 
   dimension: biggest_ttr_changer {
     type: string
     label: "Biggest TtR Changer"
-    sql: {TABLE}.biggest_ttr_changer ;;
+    sql: ${TABLE}.biggest_ttr_changer ;;
   }
 
   dimension: biggest_ttr_change {
     type: string
     label: "Biggest TtR Change"
-    sql: {TABLE}.biggest_ttr_change ;;
+    sql: ${TABLE}.biggest_ttr_change ;;
   }
 
   dimension: biggest_tti_changer {
     type: string
     label: "Biggest TtI Changer"
-    sql: {TABLE}.biggest_tti_changer ;;
+    sql: ${TABLE}.biggest_tti_changer ;;
   }
 
   dimension: biggest_tti_change {
     type: string
     label: "Biggest TtI Change"
-    sql: {TABLE}.biggest_tti_change ;;
+    sql: ${TABLE}.biggest_tti_change ;;
   }
 
   dimension: significantly_degraded_routes {
     type: string
-    sql: {TABLE}.significantly_degraded_routes ;;
+    sql: ${TABLE}.significantly_degraded_routes ;;
   }
 
   set: detail {
